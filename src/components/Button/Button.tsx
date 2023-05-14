@@ -3,9 +3,27 @@ import React from "react";
 import style from './Button.module.less';
 
 export interface ButtonProps {
-  label: string;
+    label: string;
+    disabled?: boolean;
+    onClick?: (event?: React.MouseEvent<HTMLButtonElement>) => void;
+    variant?: 'primary' | 'secondary' | 'tertiary';
 }
 
 export const Button = (props: ButtonProps) => {
-  return <button className={style.btn}>{props.label}</button>;
+    const {
+        label,
+        variant,
+        disabled,
+        onClick
+    } = props;
+
+    return (
+        <button
+            onClick={onClick}
+            className={`${style.btn} ${variant ? style['btn-secondary'] : ''}`}
+            disabled={disabled}
+        >
+            {label}
+        </button>
+    );
 };

@@ -23,3 +23,10 @@ type Story = StoryObj<typeof Button>;
 export const Primary: Story = {
   render: () => <Button label="Button" />,
 };
+
+export const Secondary: Story = {
+  render: () => <Button label="Button" variant='secondary' />,
+};
+export const Disabled: Story = {
+  render: () => <Button label="Button" disabled />,
+};

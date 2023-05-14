@@ -1,3 +1,59 @@
 .btn {
-  font-size: 60px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 1.7;
+  background: #1B4DFF;
+  border-radius: 6px;
+  padding: 6px 12px;
+  border: 0;
+  color: #FFFFFF;
+
+  &:hover {
+    background: #0F3CD9;
+  }
+
+  &:focus {
+    box-shadow: 0px 1px 2px #E8EDFF, 0px 0px 0px 3px #E8EDFF;
+    border-radius: 6px;
+  }
+
+  &:active {
+    background: #0F3CD9;
+  }
+
+  &:disabled {
+    background: #B4C4FF;
+  }
+
+  &-secondary {
+    color: #4A72FF;
+    border: 1px solid #4A72FF;
+    background: #FFFFFF;
+
+    &:hover {
+      background: #F2F5FF
+    }
+
+    &:focus {
+      box-shadow: 0px 1px 2px #E8EDFF, 0px 0px 0px 3px #E8EDFF;
+      border-radius: 6px;
+    }
+
+    &:active {
+      background: #F2F5FF;
+      border: 1px solid #4A72FF;
+      box-shadow: 0px 1px 2px rgba(45, 54, 67, 0.05);
+    }
+
+    &:disabled {
+      background: #FFFFFF;
+      border: 1px solid #B4C4FF;
+    }
+  }
+
+  &-tertiary {
+
+  }
 }
