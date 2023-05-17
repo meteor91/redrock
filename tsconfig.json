@@ -119,6 +119,7 @@
     "emitDeclarationOnly": true,             // -- Don't generate JS (rollup will do that) only export type declarations
     "plugins": [
       { "name": "typescript-plugin-css-modules" }
-    ]
-  }
+    ],
+  },
+//  "include": ["./jest-setup.ts"]
 }

@@ -7,6 +7,15 @@ const config: StorybookConfig = {
         "@storybook/addon-links",
         "@storybook/addon-essentials",
         "@storybook/addon-interactions",
+        {
+            name: '@storybook/addon-styling',
+            options: {
+                less: {
+                    // Require your Less preprocessor here
+                    implementation: require('less'),
+                },
+            },
+        },
     ],
     framework: {
         name: "@storybook/react-webpack5",
@@ -21,11 +30,11 @@ const config: StorybookConfig = {
         // 'PRODUCTION' is used when building the static version of storybook.
 
         // Make whatever fine-grained changes you need
-        config.module.rules.push({
-            test: /\.less$/,
-            use: ['style-loader', 'css-loader', 'less-loader'],
-            include: path.resolve(__dirname, '../'),
-        });
+        // config.module.rules.push({
+        //     test: /\.less$/,
+        //     use: ['style-loader', 'css-loader', 'less-loader'],
+        //     include: path.resolve(__dirname, '../'),
+        // });
         return config;
     }
 };

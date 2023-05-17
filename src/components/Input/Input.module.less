@@ -1,0 +1,31 @@
+.input {
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 400;
+    color: #2D3643;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    padding: 11px 14px;
+    width: 100%;
+
+    &::placeholder {
+        color: #AFBACA;
+    }
+
+    &:focus,
+    &:focus-visible {
+        outline: 0;
+        border: 1px solid #5E718D;
+    }
+
+    &:disabled {
+        border: 1px solid #D7DFE9;
+    }
+
+    &-error {
+        color: #E92215;
+        background: #FFF5F4;
+        border: 1px solid #FFA19B;
+    }
+}
