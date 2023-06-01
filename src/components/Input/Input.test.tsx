@@ -1,6 +1,6 @@
 import React from 'react';
-import {render, fireEvent, screen} from '@testing-library/react';
-import {Input, InputProps} from './Input';
+import { render, fireEvent, screen } from '@testing-library/react';
+import { Input, type InputProps } from './Input';
 
 describe('Input', () => {
     const onChangeMock = jest.fn();
@@ -10,7 +10,7 @@ describe('Input', () => {
     };
 
     it('should render correct', () => {
-        const {container} = renderInput({
+        const { container } = renderInput({
             value: 'Test',
             placeholder: 'Enter text',
             error: true,
@@ -21,16 +21,16 @@ describe('Input', () => {
     });
 
     it('should invoke onChange when change event fired', () => {
-        renderInput({onChange: onChangeMock, value: 'test'});
+        renderInput({ onChange: onChangeMock, value: 'test' });
 
-        fireEvent.change(screen.getByRole('textbox'), {target: {value: 'hello'}});
+        fireEvent.change(screen.getByRole('textbox'), { target: { value: 'hello' } });
 
         expect(onChangeMock).toHaveBeenCalledTimes(1);
         expect(onChangeMock).toHaveBeenCalledWith(expect.anything());
     });
 
     it('should be disabled when disabled prop is true', () => {
-        renderInput({disabled: true, value: 'test'});
+        renderInput({ disabled: true, value: 'test' });
 
         expect(screen.getByRole('textbox')).toBeDisabled();
     });
@@ -47,7 +47,6 @@ describe('Input', () => {
     //   expect(inputElement.classList.contains('input-error')).toBe(true);
     //   expect(container.firstChild).toMatchSnapshot();
     // });
-
 
     // covered with snapshot
     // it('should render with the correct initial value', () => {

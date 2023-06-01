@@ -1,16 +1,16 @@
 import React from 'react';
-import {render, fireEvent, screen} from '@testing-library/react';
-import {Checkbox, CheckboxProps} from './Checkbox';
+import { render, fireEvent, screen } from '@testing-library/react';
+import { Checkbox, type CheckboxProps } from './Checkbox';
 
 describe('Checkbox', () => {
     const onChangeMock = jest.fn();
 
     const renderCheckbox = (props: CheckboxProps) => {
         return render(<Checkbox {...props} />);
-    }
+    };
 
     it('should render correct', () => {
-        const {container} = renderCheckbox({
+        const { container } = renderCheckbox({
             checked: true,
             name: 'checkbox',
             label: 'checkbox',

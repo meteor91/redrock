@@ -1,5 +1,6 @@
-import React from "react";
-import styles from './Input.module.less'
+import React from 'react';
+import clsx from 'clsx';
+import styles from './Input.module.less';
 
 export interface InputProps {
     value: string;
@@ -9,21 +10,21 @@ export interface InputProps {
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const Input = (props : InputProps) => {
+export const Input: React.FC<InputProps> = (props) => {
     const {
         value,
         placeholder,
         disabled,
         error,
-        onChange
+        onChange,
     } = props;
     return (
         <input
-            className={`${styles.input} ${error ? styles['input-error']: ''}`}
+            className={clsx(styles.input, error && styles['input-error'])}
             placeholder={placeholder}
             onChange={onChange}
             value={value}
             disabled={disabled}
         />
-    )
-}
+    );
+};

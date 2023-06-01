@@ -1,7 +1,7 @@
-import React from "react";
-import style from './Checkbox.module.less'
-import {CheckboxInactiveIcon} from '../../internal/svg-icons/CheckboxInactiveIcon';
-import {CheckboxActiveIcon} from '../../internal/svg-icons/CheckboxActiveIcon';
+import React from 'react';
+import style from './Checkbox.module.less';
+import { CheckboxInactiveIcon } from '../../internal/svg-icons/CheckboxInactiveIcon';
+import { CheckboxActiveIcon } from '../../internal/svg-icons/CheckboxActiveIcon';
 
 export interface CheckboxProps {
     checked: boolean;
@@ -11,7 +11,7 @@ export interface CheckboxProps {
 }
 
 export const Checkbox: React.FC<CheckboxProps> = (props) => {
-    const {checked, name, label, onChange} = props;
+    const { checked, name, label, onChange } = props;
     return (
         <label
             className={style.checkbox}
@@ -32,5 +32,5 @@ export const Checkbox: React.FC<CheckboxProps> = (props) => {
 
             <span className={style['checkbox-label']}>{label}</span>
         </label>
-    )
-}
+    );
+};

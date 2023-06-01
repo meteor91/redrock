@@ -1,5 +1,6 @@
-import React from "react";
-import {Input} from "../Input/Input";
+import React from 'react';
+import clsx from 'clsx';
+import { Input } from '../Input';
 import styles from './FormInput.module.less';
 
 export interface FormInputProps {
@@ -20,7 +21,7 @@ export const FormInput = (props: FormInputProps) => {
         disabled,
         error,
         message,
-        onChange
+        onChange,
     } = props;
     return (
         <div className={styles.formInput}>
@@ -39,11 +40,11 @@ export const FormInput = (props: FormInputProps) => {
             />
 
             {message && (
-                <div className={`${styles.message} ${error ? styles.error : ''}`}>
+                <div className={clsx(styles.message, error && styles.error)}>
                     {message}
                 </div>
 
             )}
         </div>
-    )
-}
+    );
+};

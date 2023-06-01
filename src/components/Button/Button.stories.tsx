@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from './Button';
 
 const meta: Meta<typeof Button> = {
-  /* 👇 The title prop is optional.
+    /* 👇 The title prop is optional.
    * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
    * to learn how to generate automatic titles
    */
-  title: 'Button',
-  component: Button,
+    title: 'Button',
+    component: Button,
 };
 
 export default meta;
@@ -21,12 +21,12 @@ type Story = StoryObj<typeof Button>;
  * to learn how to use render functions.
  */
 export const Primary: Story = {
-  render: () => <Button label="Button" />,
+    render: () => <Button label="Button" />,
 };
 
 export const Secondary: Story = {
-  render: () => <Button label="Button" variant='secondary' />,
+    render: () => <Button label="Button" variant='secondary' />,
 };
 export const Disabled: Story = {
-  render: () => <Button label="Button" disabled />,
+    render: () => <Button label="Button" disabled />,
 };
