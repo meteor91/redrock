@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox should render correct 1`] = `
+<label
+  class="checkbox"
+>
+  <span
+    class="checkbox-icon"
+  >
+    <input
+      checked=""
+      class="checkbox-input"
+      name="checkbox"
+      type="checkbox"
+    />
+    <svg
+      fill="none"
+      height="16"
+      viewBox="0 0 16 16"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        fill="#1B4DFF"
+        height="16"
+        rx="4"
+        width="16"
+      />
+      <path
+        d="M11.4375 5.8125L7.0625 10.1875L4.875 8"
+        stroke="white"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1.53"
+      />
+    </svg>
+  </span>
+  <span
+    class="checkbox-label"
+  >
+    checkbox
+  </span>
+</label>
+`;
