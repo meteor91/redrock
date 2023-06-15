@@ -4,7 +4,8 @@ export type DataIndex = string | number | ReadonlyArray<(string | number)>;
 
 export interface ColumnType<RecordType> {
     title?: string;
-    dataIndex?: DataIndex;
+    dataIndex?: keyof RecordType;
+    // dataIndex?: DataIndex;
     // dataIndex: string | number;
     render?: (value: any, record: RecordType, index: number) => React.ReactNode;
 }

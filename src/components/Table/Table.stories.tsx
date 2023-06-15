@@ -45,7 +45,7 @@ const dataSource: ExampleData[] = [
 const columns: Array<ColumnType<ExampleData>> = [
     {
         title: 'name',
-        dataIndex: ['name'],
+        dataIndex: 'name',
     },
     {
         title: 'age',
@@ -53,7 +53,7 @@ const columns: Array<ColumnType<ExampleData>> = [
     },
     {
         title: 'game pass',
-        dataIndex: ['gamePass', 'enabled'],
-        render: (value) => value === true ? 'yes' : 'no',
+        dataIndex: 'gamePass',
+        render: (value) => value.enabled === true ? 'yes' : 'no',
     },
 ];

@@ -13,7 +13,7 @@ interface BodyRowProps<T> {
 export const BodyRow = <T, >(props: BodyRowProps<T>): React.ReactElement => {
     const { rowData, columns } = props;
     return (
-        <tr>
+        <tr className={style.tr}>
             {columns.map((column: ColumnType<T>, index) => {
                 // const childNode: React.ReactNode = rowData[column.dataIndex] as string;
                 const { dataIndex, render } = column;
@@ -25,10 +25,19 @@ export const BodyRow = <T, >(props: BodyRowProps<T>): React.ReactElement => {
                 //             ? dataIndex
                 //             : [dataIndex];
                 // const childNode: React.ReactNode = getValue(rowData, path);
+                let content: string | React.ReactNode = '';
+                if (dataIndex) {
+                    content = rowData[dataIndex] as string;
+                }
+                if (render) {
+                    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                    content = render(rowData[dataIndex!], rowData, index);
+                }
                 return (
                     <td key={index} className={style.cell}>
                         {/* {childNode} */}
-                        {renderCell(rowData, index, dataIndex, render)}
+                        {/* {renderCell(rowData, index, dataIndex, render)} */}
+                        {content}
                     </td>
                 );
             })}

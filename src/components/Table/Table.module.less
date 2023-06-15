@@ -1,11 +1,27 @@
 .table {
   border-collapse: collapse;
+
   .thead {
-    .cell {
-      background: #F9FAFB;
+    .tr {
+      .cell {
+        background: #F9FAFB;
+      }
     }
   }
-  .cell {
-    padding: 15px 20px 15px;
+
+  .thead,
+  .tbody
+  {
+    .tr {
+      .cell {
+        padding: 15px 20px 15px;
+      }
+    }
+  }
+
+  .tbody {
+    .tr + .tr {
+        border-top: #E9EFF6 solid 1px;
+    }
   }
 }

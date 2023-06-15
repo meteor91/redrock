@@ -1,16 +1,13 @@
 import React from 'react';
-// import clsx from 'clsx';
 import { type ColumnType, type GetRowKey } from './interfaces';
 import style from './Table.module.less';
 import { BodyRow } from './components/BodyRow';
 
-export interface TableProps<RecordType = unknown> {
+export interface TableProps<RecordType> {
     dataSource: RecordType[];
     columns: Array<ColumnType<RecordType>>;
     rowKey?: string | keyof RecordType | GetRowKey<RecordType>;
 }
-
-// const myCom: <T>SFC<Prop<T>> = <T>(props: Prop<T>)=> <div>test</div>
 
 // eslint-disable-next-line @typescript-eslint/comma-dangle
 export const Table = <T, >(props: TableProps<T>): React.ReactElement => {
@@ -18,7 +15,7 @@ export const Table = <T, >(props: TableProps<T>): React.ReactElement => {
     return (
         <table className={style.table}>
             <thead className={style.thead}>
-                <tr>
+                <tr className={style.tr}>
                     {columns.map((column: ColumnType<T>) => {
                         return (
                             <th key={column.dataIndex as string} className={style.cell}>
@@ -28,7 +25,7 @@ export const Table = <T, >(props: TableProps<T>): React.ReactElement => {
                     })}
                 </tr>
             </thead>
-            <tbody>
+            <tbody className={style.tbody}>
                 {dataSource.map((rowData: T, index) => {
                     return <BodyRow key={index} rowData={rowData} columns={columns} />;
                 })}
