@@ -1,0 +1,32 @@
+.table {
+  border-collapse: collapse;
+  width: 100%;
+
+  .thead {
+    .tr {
+      .cell {
+        background: #F9FAFB;
+      }
+    }
+  }
+
+  .thead,
+  .tbody
+  {
+    .tr {
+      .cell {
+        padding: 15px 20px 15px;
+      }
+      .noData {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  .tbody {
+    .tr + .tr {
+        border-top: #E9EFF6 solid 1px;
+    }
+  }
+}
