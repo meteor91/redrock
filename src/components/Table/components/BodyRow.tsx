@@ -1,12 +1,11 @@
-import { type ColumnType } from '../interfaces';
+import { type ColumnType, type RowKey } from '../interfaces';
 import React from 'react';
 import style from '../Table.module.less';
-import getValue from '../../../utils/getValue';
-import { renderCell } from './renderCell';
 
 interface BodyRowProps<T> {
     rowData: T;
     columns: Array<ColumnType<T>>;
+    rowKey?: RowKey<T>;
 }
 
 // eslint-disable-next-line @typescript-eslint/comma-dangle
@@ -26,10 +25,12 @@ export const BodyRow = <T, >(props: BodyRowProps<T>): React.ReactElement => {
                 //             : [dataIndex];
                 // const childNode: React.ReactNode = getValue(rowData, path);
                 let content: string | React.ReactNode = '';
+                // if (dataIndex && rowData.hasOwnProperty(dataIndex)) {
                 if (dataIndex) {
-                    content = rowData[dataIndex] as string;
-                }
-                if (render) {
+                    content = render
+                        ? render(rowData[dataIndex], rowData, index)
+                        : rowData[dataIndex] as string;
+                } else if (render) {
                     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                     content = render(rowData[dataIndex!], rowData, index);
                 }

@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Table, type TableProps } from './Table';
+import { Table } from './Table';
 import { type ColumnType } from './interfaces';
 
 const meta: Meta<typeof Table> = {
     title: 'Table',
     component: Table,
+    argTypes: {
+        loading: { control: 'boolean' },
+    },
+    args: {
+        loading: false,
+    },
 };
 
 export default meta;
@@ -14,7 +20,11 @@ export default meta;
 type Story = StoryObj<typeof Table>;
 
 export const Basic: Story = {
-    render: () => <Table dataSource={dataSource} columns={columns}/>,
+    render: (args) => <Table {...args} dataSource={dataSource} columns={columns}/>,
+};
+
+export const NoData: Story = {
+    render: (args) => <Table {...args} dataSource={[]} columns={columns}/>,
 };
 
 interface ExampleData {

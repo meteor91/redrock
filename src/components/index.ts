@@ -1,5 +1,6 @@
-export { Input } from './Input';
-export { FormInput } from './FormInput';
-export { Button } from './Button';
-export { Checkbox } from './Checkbox';
-export { Table } from './Table';
+export { Input, type InputProps } from './Input';
+export { FormInput, type FormInputProps } from './FormInput';
+export { Button, type ButtonProps } from './Button';
+export { Checkbox, type CheckboxProps } from './Checkbox';
+export { Table, type TableProps } from './Table';
+export { Spin, type SpinProps } from './Spin';
