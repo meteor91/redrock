@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 export interface InputProps {
     value: string;
     placeholder?: string;
@@ -6,4 +6,4 @@ export interface InputProps {
     error?: boolean;
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
-export declare const Input: (props: InputProps) => React.JSX.Element;
+export declare const Input: React.FC<InputProps>;
