@@ -1,9 +1,9 @@
 import React from 'react';
 import clsx from 'clsx';
 import { Input } from '../Input';
-import styles from './FormInput.module.less';
+import styles from './InputField.module.less';
 
-export interface FormInputProps {
+export interface InputFieldProps {
     label?: string;
     value: string;
     placeholder?: string;
@@ -13,7 +13,7 @@ export interface FormInputProps {
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const FormInput = (props: FormInputProps) => {
+export const InputField: React.FC<InputFieldProps> = (props) => {
     const {
         label,
         value,
@@ -43,7 +43,6 @@ export const FormInput = (props: FormInputProps) => {
                 <div className={clsx(styles.message, error && styles.error)}>
                     {message}
                 </div>
-
             )}
         </div>
     );

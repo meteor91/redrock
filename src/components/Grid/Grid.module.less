@@ -1,0 +1,19 @@
+.generate-grid(@num-columns: 24) {
+
+  .generate-columns(@n) when (@n > 0) {
+    .generate-columns(@n - 1);
+    .col-@{n} {
+      width: (100% / @num-columns * @n);
+    }
+  }
+
+  .generate-columns(@num-columns);
+}
+
+@test: 200px;
+
+.row {
+    margin: 8px 0;
+	display: flex;
+    .generate-grid(24);
+}

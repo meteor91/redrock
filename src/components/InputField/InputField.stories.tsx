@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { FormInput, type FormInputProps } from './FormInput';
+import { InputField, type InputFieldProps } from './InputField';
 
-const meta: Meta<typeof FormInput> = {
-    title: 'FormInput',
-    component: FormInput,
+const meta: Meta<typeof InputField> = {
+    title: 'InputField',
+    component: InputField,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof FormInput>;
+type Story = StoryObj<typeof InputField>;
 
-type Props = Partial<FormInputProps>;
+type Props = Partial<InputFieldProps>;
 
-const FormInputPreview: React.FC<Props> = (props) => {
+const InputFieldPreview: React.FC<Props> = (props) => {
     const { value: initialValue } = props;
 
     const [value, setValue] = useState(initialValue ?? '');
@@ -24,7 +24,7 @@ const FormInputPreview: React.FC<Props> = (props) => {
 
     return (
         <div>
-            <FormInput
+            <InputField
                 onChange={handleChange}
                 value={value}
                 label={props.label ?? 'some label'}
@@ -38,7 +38,7 @@ const FormInputPreview: React.FC<Props> = (props) => {
 
 export const Basic: Story = {
     render: () => (
-        <FormInputPreview
+        <InputFieldPreview
             label='Name'
             placeholder='Type here'
             value='Jhon Doe'
@@ -49,7 +49,7 @@ export const Basic: Story = {
 
 export const Error: Story = {
     render: () => (
-        <FormInputPreview
+        <InputFieldPreview
             label='Name'
             placeholder='Type here'
             value='Jhon Doe'
