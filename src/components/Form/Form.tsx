@@ -8,14 +8,14 @@ import {
 import { FormInput } from './components/FormInput';
 
 interface FormProps<T> {
-    onSubmit: () => void;
+    onSubmit: (data: T) => void;
     children?: React.ReactNode;
     defaultValues: DefaultValues<T>;
 }
 
 // eslint-disable-next-line @typescript-eslint/comma-dangle
 export const Form = <T extends FieldValues,>(props: FormProps<T>): React.ReactElement => {
-    const { defaultValues, children } = props;
+    const { defaultValues, onSubmit, children } = props;
     const methods = useForm<T>({
         defaultValues,
     });
@@ -23,7 +23,7 @@ export const Form = <T extends FieldValues,>(props: FormProps<T>): React.ReactEl
 
     return (
         <FormProvider {...methods}>
-            <form onSubmit={handleSubmit((data) => { console.log(data); })}>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 {children}
             </form>
         </FormProvider>

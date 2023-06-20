@@ -9,6 +9,7 @@ export interface ButtonProps {
     disabled?: boolean;
     onClick?: (event?: React.MouseEvent<HTMLButtonElement>) => void;
     variant?: Variant;
+    type?: 'button' | 'submit' | 'reset';
 }
 
 export const Button: React.FC<ButtonProps> = (props) => {
@@ -17,6 +18,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
         variant,
         disabled,
         onClick,
+        type,
     } = props;
 
     return (
@@ -24,6 +26,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
             onClick={onClick}
             className={clsx(style.btn, getButtonVariantClassName(variant))}
             disabled={disabled}
+            type={type}
         >
             {label}
         </button>
