@@ -13,6 +13,12 @@ const config: StorybookConfig = {
                 less: {
                     // Require your Less preprocessor here
                     implementation: require('less'),
+                    lessOptions: {
+                        paths: ['./src'],
+                        importLoaders: 1,
+                        modules: true,
+                        localIdentName: '[name]__[local]___[hash:base64:5]'
+                    }
                 },
             },
         },

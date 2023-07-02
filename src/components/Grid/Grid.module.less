@@ -10,10 +10,12 @@
   .generate-columns(@num-columns);
 }
 
-@test: 200px;
 
 .row {
-    margin: 8px 0;
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
 	display: flex;
     .generate-grid(24);
+
 }

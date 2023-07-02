@@ -1,31 +1,33 @@
+@import "styles/colors.less";
+
 .input {
     font-size: 1rem;
     line-height: 1.7;
     font-weight: 400;
-    color: #2D3643;
-    background-color: #FFFFFF;
+    color: @gray-800;
+    background-color: @white;
     border-radius: 6px;
     border: 1px solid #ced4da;
     padding: 11px 14px;
     width: 100%;
 
     &::placeholder {
-        color: #AFBACA;
+        color: @gray-300;
     }
 
     &:focus,
     &:focus-visible {
         outline: 0;
-        border: 1px solid #5E718D;
+        border: 1px solid @gray-500;
     }
 
     &:disabled {
-        border: 1px solid #D7DFE9;
+        border: 1px solid @gray-200;
     }
 
     &-error {
-        color: #E92215;
-        background: #FFF5F4;
-        border: 1px solid #FFA19B;
+        color: @red-600;
+        background: @red-200;
+        border: 1px solid @red-200;
     }
 }
